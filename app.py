@@ -28,11 +28,11 @@ df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
 #data = df.drop(['Time'],axis=1)
 
 #Removing the duplicate values
-new_df = data.drop_duplicates()
+#new_df = data.drop_duplicates()
 
 # separating the data for analysis
-legit = new_df[new_df.Class == 0]
-fraud = new_df[new_df.Class == 1]
+legit = df[new_df.Class == 0]
+fraud = df[new_df.Class == 1]
 
 #handling Imbalanced Dataset
 legit_sample=legit.sample(n=473)
