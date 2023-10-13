@@ -25,7 +25,7 @@ sc = StandardScaler()
 df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
 
 #Droping the time column
-data = df.drop(['Time'],axis=1)
+#data = df.drop(['Time'],axis=1)
 
 #Removing the duplicate values
 new_df = data.drop_duplicates()
