@@ -31,8 +31,8 @@ df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
 #new_df = data.drop_duplicates()
 
 # separating the data for analysis
-legit = df[new_df.Class == 0]
-fraud = df[new_df.Class == 1]
+legit = df[df.Class == 0]
+fraud = df[df.Class == 1]
 
 #handling Imbalanced Dataset
 legit_sample=legit.sample(n=473)
