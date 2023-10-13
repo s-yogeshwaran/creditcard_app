@@ -67,6 +67,7 @@ svc.fit(x_train, y_train)
 @st.cache()
 def prediction(model):
 	predict = model.predict(x_test)
+	return predict
 
 #st.title("Credit Card Fraud Detection App")
 st.sidebar.title("Credit Card Fraud Detection App")
@@ -76,10 +77,10 @@ classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine',
 
 if st.sidebar.button('Predict'):
 	if classifier == 'Support Vector Machine':
-		predict = prediction(svc)
+		y_pred = prediction(svc)
 		score = svc.score(x_train, y_train)
 		print(f"{' '*19}Support Vector Machine\n")
-		print(classification_report(y_test, predict))
+		print(classification_report(y_test, y_pred))
 
 	elif classifier == 'Logistic Regression':
 		predict = prediction(log)
