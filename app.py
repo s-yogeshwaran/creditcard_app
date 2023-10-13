@@ -18,7 +18,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # loading the dataset to a Pandas DataFrame
-df= pd.read_csv('creditcardnew.csv')
+df= pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardnew.csv')
 
 #Feature Scaling - Normalize
 sc = StandardScaler()
