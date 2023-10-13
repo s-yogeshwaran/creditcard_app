@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-from sklearn.metrics import precision_score,recall_score,f1_score
+from sklearn.metrics import precision_score,recall_score,f1_score, classification_report
 
 #To avoid warnings
 import warnings
@@ -78,17 +78,25 @@ if st.sidebar.button('Predict'):
 	if classifier == 'Support Vector Machine':
 		predict = prediction(svc)
 		score = svc.score(x_train, y_train)
+		print(f"{' '*19}Support Vector Machine\n")
+		print(classification_report(y_test, predict))
 
 	elif classifier == 'Logistic Regression':
 		predict = prediction(log)
 		score = log.score(x_train, y_train)
+		print(f"{' '*18}Logistic Regression Report\n")
+		print(classification_report(y_test, predict))
 	
 	elif classifier == 'Random Forest Classifier':
 		predict = prediction(rf)
 		score = rf.score(x_train, y_train)
+		print(f"{' '*16}Random Forest Classifier Report\n")
+		print(classification_report(y_test, predict))
 
 	else:
 		predict = prediction(dt)
 		score = dt.score(x_train, y_train)
+		print(f"{' '*19}Decision Tree Classifier\n")
+		print(classification_report(y_test, predict))
 
 	st.write(f"accuracy score of {classifier} = {score:.4f}")
