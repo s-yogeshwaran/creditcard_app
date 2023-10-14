@@ -79,10 +79,8 @@ def prediction(model):
 #st.title("Credit Card Fraud Detection App")
 st.sidebar.title("Credit Card Fraud Detection App")
 st.sidebar.write('## Machine Learning Algorithms')
-#st.sidebar.radio
-classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 
-	'Logistic Regression', 'Random Forest Classifier', 
-	'Decision Tree Classifier'))
+classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
+#classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'))
 
 if st.sidebar.button('Predict'):
 	if classifier == 'Support Vector Machine':
