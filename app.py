@@ -87,6 +87,7 @@ if st.sidebar.button('Predict'):
 		score = svc.score(x_train, y_train)
 		#st.write(f"{' '*19}Support Vector Machine\n")
 		#st.write(classification_report(y_test, y_pred))
+	        classification_report(y_test, y_pred)
 
 	elif classifier == 'Logistic Regression':
 		predict = prediction(log)
