@@ -20,37 +20,32 @@ from sklearn.metrics import precision_score,recall_score,f1_score, classificatio
 import warnings
 warnings.filterwarnings('ignore')
 
-@st.cache()
-def load_data():
-	# loading the dataset to a Pandas DataFrame
-	df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
-	df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+# loading the dataset to a Pandas DataFrame
+df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
+df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
 	
-	df = pd.concat([df1,df2],ignore_index=True)
+df = pd.concat([df1,df2],ignore_index=True)
 	
-	#Feature Scaling - Normalize
-	sc = StandardScaler()
-	df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
+#Feature Scaling - Normalize
+sc = StandardScaler()
+df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
 	
-	#Droping the time column
-	data = df.drop(['Time'],axis=1)
+#Droping the time column
+data = df.drop(['Time'],axis=1)
 	
-	#Removing the duplicate values
-	new_df = data.drop_duplicates()
+#Removing the duplicate values
+new_df = data.drop_duplicates()
 	
-	# separating the data for analysis
-	legit = new_df[new_df.Class == 0]
-	fraud = new_df[new_df.Class == 1]
+# separating the data for analysis
+legit = new_df[new_df.Class == 0]
+fraud = new_df[new_df.Class == 1]
 	
-	#handling Imbalanced Dataset
-	legit_sample=legit.sample(n=473)
+#handling Imbalanced Dataset
+legit_sample=legit.sample(n=473)
 	
-	#creating new dataframe
-	new_df = pd.concat([legit_sample,fraud],ignore_index=True)
+#creating new dataframe
+new_df = pd.concat([legit_sample,fraud],ignore_index=True)
 	
-	return new_df
-	
-new_df = load_data()
 
 #feature variable and target variable
 x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
@@ -83,6 +78,8 @@ def prediction(model):
 
 #st.title("Credit Card Fraud Detection App")
 st.sidebar.title("Credit Card Fraud Detection App")
+st.sidebar.write('Machine Learning Algorithms')
+#st.sidebar.radio
 classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 
 	'Logistic Regression', 'Random Forest Classifier', 
 	'Decision Tree Classifier'))
