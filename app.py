@@ -21,55 +21,58 @@ import warnings
 warnings.filterwarnings('ignore')
 
 @st.cache()
-# loading the dataset to a Pandas DataFrame
-df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
-df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+def load_data():
+	# loading the dataset to a Pandas DataFrame
+	df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
+	df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+	
+	df = pd.concat([df1,df2],ignore_index=True)
+	
+	#Feature Scaling - Normalize
+	sc = StandardScaler()
+	df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
+	
+	#Droping the time column
+	data = df.drop(['Time'],axis=1)
+	
+	#Removing the duplicate values
+	new_df = data.drop_duplicates()
+	
+	# separating the data for analysis
+	legit = new_df[new_df.Class == 0]
+	fraud = new_df[new_df.Class == 1]
+	
+	#handling Imbalanced Dataset
+	legit_sample=legit.sample(n=473)
+	
+	#creating new dataframe
+	new_df = pd.concat([legit_sample,fraud],ignore_index=True)
+	
+	#feature variable and target variable
+	x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
+	y = new_df['Class']
+	
+	#spliting train and test set after balancing
+	x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.20,
+	                                                 random_state=42)
+	
+	#Logistic Regression
+	log = LogisticRegression()
+	log.fit(x_train,y_train) # training the dataset using fit function ()
+	
+	#Decision Tree Classifier
+	dt = DecisionTreeClassifier()
+	dt.fit(x_train,y_train)
+	
+	#Random Forest Classifier
+	rf = RandomForestClassifier()
+	rf.fit(x_train,y_train)
+	
+	# Creating the SVC model 
+	svc = SVC(kernel = 'linear')
+	svc.fit(x_train, y_train)
 
-df = pd.concat([df1,df2],ignore_index=True)
-
-#Feature Scaling - Normalize
-sc = StandardScaler()
-df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
-
-#Droping the time column
-data = df.drop(['Time'],axis=1)
-
-#Removing the duplicate values
-new_df = data.drop_duplicates()
-
-# separating the data for analysis
-legit = new_df[new_df.Class == 0]
-fraud = new_df[new_df.Class == 1]
-
-#handling Imbalanced Dataset
-legit_sample=legit.sample(n=473)
-
-#creating new dataframe
-new_df = pd.concat([legit_sample,fraud],ignore_index=True)
-
-#feature variable and target variable
-x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
-y = new_df['Class']
-
-#spliting train and test set after balancing
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.20,
-                                                 random_state=42)
-
-#Logistic Regression
-log = LogisticRegression()
-log.fit(x_train,y_train) # training the dataset using fit function ()
-
-#Decision Tree Classifier
-dt = DecisionTreeClassifier()
-dt.fit(x_train,y_train)
-
-#Random Forest Classifier
-rf = RandomForestClassifier()
-rf.fit(x_train,y_train)
-
-# Creating the SVC model 
-svc = SVC(kernel = 'linear')
-svc.fit(x_train, y_train)
+load_data()
 
 @st.cache()
 def prediction(model):
