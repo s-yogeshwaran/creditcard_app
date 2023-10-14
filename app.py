@@ -82,10 +82,16 @@ st.title("Credit Card Fraud Detection App")
 st.sidebar.write('Menu')
 if st.sidebar.button('Machine Learning Algorithm'):
 	
-	algo = st.radio(
-		'Machine Learning Algorithms', 
-		['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], 
-		index = None,
+	#algo = st.radio(
+	#	'Machine Learning Algorithms', 
+	#	['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], 
+	#	index = None,
+	#)
+
+	genre = st.radio(
+    	"What's your favorite movie genre",
+    	[":rainbow[Comedy]", "***Drama***", "Documentary :movie_camera:"],
+    	index=None,
 	)
 	
 	if algo == 'Supervised Learning Algorithms':
