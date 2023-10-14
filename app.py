@@ -81,7 +81,7 @@ st.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
 st.sidebar.write(''' 
 
-
+0
 
 
 ''')
