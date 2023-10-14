@@ -79,16 +79,11 @@ def prediction(model):
 st.title("Credit Card Fraud Detection App")
 #st.sidebar.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
-st.sidebar.write('                                                                                          ')
-st.sidebar.write('                                                                                          ')
-st.sidebar.write('                                                                                          ')
-st.sidebar.write('                                                                                          ')
-st.sidebar.write('                                                                                          ')
 st.sidebar.write('Menu')
 if st.sidebar.button('Machine Learning Algorithm'):
 	algo = st.radio('Machine Learning Algorithms', ['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'])
-	if algo == 'Supervised Learning Algorithms':
-		classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
+	#if algo == 'Supervised Learning Algorithms':
+		#classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 if st.sidebar.button('Deep Learning'):
 	classifier = st.sidebar.radio('Deep Learning', ['Model 1', 'Model 2', 'Model 3'])
 #classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
