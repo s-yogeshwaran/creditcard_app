@@ -81,7 +81,7 @@ st.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
 st.sidebar.write('Menu')
 if st.sidebar.button('Machine Learning Algorithm'):
-	algo = st.radio('Machine Learning Algorithms', ['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], disabled = True)
+	algo = st.radio('Machine Learning Algorithms', ['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], index = none)
 	if algo == 'Supervised Learning Algorithms':
 		classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 		
