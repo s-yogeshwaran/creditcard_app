@@ -20,6 +20,7 @@ from sklearn.metrics import precision_score,recall_score,f1_score, classificatio
 import warnings
 warnings.filterwarnings('ignore')
 
+@st.cache()
 # loading the dataset to a Pandas DataFrame
 df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
 df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
