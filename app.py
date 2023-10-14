@@ -85,7 +85,7 @@ if st.sidebar.button('Predict'):
 	if classifier == 'Support Vector Machine':
 		y_pred = prediction(svc)
 		score = svc.score(x_train, y_train)
-		classification_report(y_test, y_pred)
+		st.write(classification_report(y_test, y_pred))
 		#st.write(f"{' '*19}Support Vector Machine\n")
 		#st.write(classification_report(y_test, y_pred))
 	        
