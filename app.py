@@ -78,7 +78,7 @@ def prediction(model):
 
 #st.title("Credit Card Fraud Detection App")
 st.sidebar.title("Credit Card Fraud Detection App")
-st.sidebar.write('Machine Learning Algorithms')
+st.sidebar.write('## Machine Learning Algorithms')
 #st.sidebar.radio
 classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 
 	'Logistic Regression', 'Random Forest Classifier', 
