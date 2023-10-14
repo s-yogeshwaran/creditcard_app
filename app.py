@@ -1,3 +1,6 @@
+#dataset1 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv
+#dataset2 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv
+
 #importing the libraries
 import numpy as np
 import pandas as pd
@@ -18,21 +21,24 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # loading the dataset to a Pandas DataFrame
-df= pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardnew.csv')
+df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
+df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+
+df = pd.concat([df1,df2],ignore_index=True)
 
 #Feature Scaling - Normalize
 sc = StandardScaler()
 df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
 
 #Droping the time column
-#data = df.drop(['Time'],axis=1)
+data = df.drop(['Time'],axis=1)
 
 #Removing the duplicate values
-#new_df = data.drop_duplicates()
+new_df = data.drop_duplicates()
 
 # separating the data for analysis
-legit = df[df.Class == 0]
-fraud = df[df.Class == 1]
+legit = new_df[new_df.Class == 0]
+fraud = new_df[new_df.Class == 1]
 
 #handling Imbalanced Dataset
 legit_sample=legit.sample(n=473)
@@ -79,25 +85,25 @@ if st.sidebar.button('Predict'):
 	if classifier == 'Support Vector Machine':
 		y_pred = prediction(svc)
 		score = svc.score(x_train, y_train)
-		st.write(f"{' '*19}Support Vector Machine\n")
-		st.write(classification_report(y_test, y_pred))
+		#st.write(f"{' '*19}Support Vector Machine\n")
+		#st.write(classification_report(y_test, y_pred))
 
 	elif classifier == 'Logistic Regression':
 		predict = prediction(log)
 		score = log.score(x_train, y_train)
-		print(f"{' '*18}Logistic Regression Report\n")
-		print(classification_report(y_test, predict))
+		#print(f"{' '*18}Logistic Regression Report\n")
+		#print(classification_report(y_test, predict))
 	
 	elif classifier == 'Random Forest Classifier':
 		predict = prediction(rf)
 		score = rf.score(x_train, y_train)
-		print(f"{' '*16}Random Forest Classifier Report\n")
-		print(classification_report(y_test, predict))
+		#print(f"{' '*16}Random Forest Classifier Report\n")
+		#print(classification_report(y_test, predict))
 
 	else:
 		predict = prediction(dt)
 		score = dt.score(x_train, y_train)
-		print(f"{' '*19}Decision Tree Classifier\n")
-		print(classification_report(y_test, predict))
+		#print(f"{' '*19}Decision Tree Classifier\n")
+		#print(classification_report(y_test, predict))
 
 	st.write(f"accuracy score of {classifier} = {score:.4f}")
