@@ -87,7 +87,7 @@ st.sidebar.write('''
 ''')
 st.sidebar.write('Menu')
 if st.sidebar.button('Machine Learning Algorithm'):
-	algo = st.sidebar.radio('Supervised Learning Algorithms', 'Unsupervised Learning Algorithms')
+	algo = st.sidebar.radio(['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'])
 	if algo == 'Supervised Learning Algorithms':
 		classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 if st.sidebar.button('Deep Learning'):
