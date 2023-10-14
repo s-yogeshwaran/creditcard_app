@@ -48,31 +48,31 @@ def load_data():
 	#creating new dataframe
 	new_df = pd.concat([legit_sample,fraud],ignore_index=True)
 	
-	#feature variable and target variable
-	x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
-	y = new_df['Class']
+load_data()
+
+#feature variable and target variable
+x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
+y = new_df['Class']
 	
-	#spliting train and test set after balancing
-	x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.20,
+#spliting train and test set after balancing
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.20,
 	                                                 random_state=42)
 	
-	#Logistic Regression
-	log = LogisticRegression()
-	log.fit(x_train,y_train) # training the dataset using fit function ()
+#Logistic Regression
+log = LogisticRegression()
+log.fit(x_train,y_train) # training the dataset using fit function ()
 	
-	#Decision Tree Classifier
-	dt = DecisionTreeClassifier()
-	dt.fit(x_train,y_train)
+#Decision Tree Classifier
+dt = DecisionTreeClassifier()
+dt.fit(x_train,y_train)
 	
-	#Random Forest Classifier
-	rf = RandomForestClassifier()
-	rf.fit(x_train,y_train)
+#Random Forest Classifier
+rf = RandomForestClassifier()
+rf.fit(x_train,y_train)
 	
-	# Creating the SVC model 
-	svc = SVC(kernel = 'linear')
-	svc.fit(x_train, y_train)
-
-load_data()
+# Creating the SVC model 
+svc = SVC(kernel = 'linear')
+svc.fit(x_train, y_train)
 
 @st.cache()
 def prediction(model):
