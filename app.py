@@ -76,10 +76,16 @@ def prediction(model):
 	predict = model.predict(x_test)
 	return predict
 
-#st.title("Credit Card Fraud Detection App")
-st.sidebar.title("Credit Card Fraud Detection App")
-st.sidebar.write('## Machine Learning Algorithms')
-classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
+st.title("Credit Card Fraud Detection App")
+#st.sidebar.title("Credit Card Fraud Detection App")
+#st.sidebar.write('## Machine Learning Algorithms')
+if st.sidebar.button('Machine Learning Algorithm'):
+	algo = st.sidebar.radio('Supervised Learning Algorithms', 'Unsupervised Learning Algorithms')
+	if algo == 'Supervised Learning Algorithms':
+		classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
+if st.sidebar.button('Deep Learning'):
+	classifier = st.sidebar.radio('Deep Learning', ['Model 1', 'Model 2', 'Model 3'])
+#classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 #classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'))
 
 if st.sidebar.button('Predict'):
