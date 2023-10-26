@@ -57,7 +57,7 @@ if st.checkbox('show dataset'):
 
 #st.sidebar.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
-st.sidebar.subtitle('Menu')
+st.sidebar.header('Menu')
 if st.sidebar.button('Machine Learning Algorithm'):
 	
 	algo = st.radio(
