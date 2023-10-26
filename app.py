@@ -1,40 +1,36 @@
-!wget https://raw.githubusercontent.com/v-dhanalakshmi/datasets/main/creditcard.zip
+#dataset1 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv
+#dataset2 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv
 
+#importing the libraries
+import vaex
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import streamlit as st
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import precision_score,recall_score,f1_score, classification_report
 
+#To avoid warnings
+import warnings
+warnings.filterwarnings('ignore')
 
-
-
-
-
-
-
-# #dataset1 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv
-# #dataset2 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv
-
-# #importing the libraries
-# import numpy as np
-# import pandas as pd
-# import seaborn as sns
-# import streamlit as st
-# import matplotlib.pyplot as plt
-# from sklearn.model_selection import train_test_split
-# from sklearn.linear_model import LogisticRegression
-# from sklearn.svm import SVC
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.tree import DecisionTreeClassifier
-# from sklearn.ensemble import RandomForestClassifier
-# from sklearn.metrics import accuracy_score
-# from sklearn.metrics import precision_score,recall_score,f1_score, classification_report
-
-# #To avoid warnings
-# import warnings
-# warnings.filterwarnings('ignore')
-
-# # loading the dataset to a Pandas DataFrame
-# df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
-# df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+# loading the dataset to a Pandas DataFrame
+df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
+df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
 	
-# df = pd.concat([df1,df2],ignore_index=True)
+df = pd.concat([df1,df2],ignore_index=True)
+
+df = vaex.from_pandas(df)
+st.dataframe(df)
+st.write(f'Number of Rows: {df.shape[0]}')
+st.write(f'Number of columns: {df.shape[1]}')
 	
 # #Feature Scaling - Normalize
 # sc = StandardScaler()
