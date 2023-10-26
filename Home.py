@@ -73,7 +73,7 @@ if st.checkbox('show dataset'):
 	st.write(f'Number of columns: {df.shape[1]}')
 	# show_data()
 
-st.sidebar.header('☰ Menu')
+# st.sidebar.header('☰ Menu')
 # st.sidebar.checkbox('Graphs')
 # st.sidebar.checkbox('Supervised Learning Algorithms')
 # st.sidebar.checkbox('Deep Learning')
