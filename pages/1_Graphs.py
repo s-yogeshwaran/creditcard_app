@@ -31,7 +31,7 @@ plt.xticks(range(2) , labels=['Legit', 'Fraud'])
 st.pyplot(plt)
 
 # Distribution of legit transactions & fraudulent transactions after removing duplicates
-splot = sns.countplot(x = 'Class', data = new_df1)
+splot = sns.countplot(x = 'Class', data = df)
 
 for p in splot.patches:
   splot.annotate(format(p.get_height(), '.0f'),
@@ -44,18 +44,18 @@ plt.xticks(range(2) , labels=['Legit', 'Fraud'])
 st.pyplot(plt)
 
 # % distribution legit transactions & fraudulent transactions
-class_col = new_df1['Class'].value_counts()
+class_col = df['Class'].value_counts()
 label = ['Legit', 'Fraud']
 quantity = class_col.values
 
-figure = px.pie(new_df1, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
+figure = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
 st.pyplot(figure)
 
 # Transactions in time
 data_df = new_df1
 
-class_0 = data_df.loc[data_df['Class'] == 0]["Time"]
-class_1 = data_df.loc[data_df['Class'] == 1]["Time"]
+class_0 = data_df.loc[df['Class'] == 0]["Time"]
+class_1 = data_df.loc[df['Class'] == 1]["Time"]
 
 hist_data = [class_0, class_1]
 group_labels = ['Legit', 'Fraud']
