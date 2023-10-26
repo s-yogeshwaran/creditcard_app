@@ -49,7 +49,7 @@ label = ['Legit', 'Fraud']
 quantity = class_col.values
 
 figure = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
-st.pyplot(figure)
+st.pyplot()
 
 # Transactions in time
 data_df = new_df1
