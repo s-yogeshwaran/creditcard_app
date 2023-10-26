@@ -69,7 +69,10 @@ if st.checkbox('show dataset'):
 	# show_data()
 
 st.sidebar.header('☰ Menu')
-st.sidebar.checkbox('Meachine Learning Algorithm')
+st.sidebar.checkbox('Graphs')
+st.sidebar.checkbox('Supervised Learning Algorithms')
+st.sidebar.cheeckbox('Deep Learning')
+
 
 # #st.sidebar.title("Credit Card Fraud Detection App")
 # #st.sidebar.write('## Machine Learning Algorithms')
