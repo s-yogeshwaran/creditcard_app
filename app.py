@@ -1,6 +1,3 @@
-#dataset1 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv
-#dataset2 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv
-
 #importing the libraries
 import numpy as np
 import pandas as pd
@@ -20,34 +17,7 @@ from sklearn.metrics import precision_score,recall_score,f1_score, classificatio
 import warnings
 warnings.filterwarnings('ignore')
 
-# # loading the dataset to a Pandas DataFrame
-# df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
-# df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
-	
-# df = pd.concat([df1,df2],ignore_index=True)
-
 df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
-	
-# #Feature Scaling - Normalize
-# sc = StandardScaler()
-# df['Amount']=sc.fit_transform(pd.DataFrame(df['Amount']))
-	
-# #Droping the time column
-# data = df.drop(['Time'],axis=1)
-	
-# #Removing the duplicate values
-# new_df = data.drop_duplicates()
-	
-# # separating the data for analysis
-# legit = new_df[new_df.Class == 0]
-# fraud = new_df[new_df.Class == 1]
-	
-# #handling Imbalanced Dataset
-# legit_sample=legit.sample(n=473)
-	
-# #creating new dataframe
-# new_df = pd.concat([legit_sample,fraud],ignore_index=True)
-
 
 #feature variable and target variable
 x = df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
@@ -81,7 +51,7 @@ def prediction(model):
 st.title("Credit Card Fraud Detection App")
 
 if st.button('show dataset'):
-	st.dataframe(df)
+	st.write(df)
 	st.write(f'Number of Rows: {df.shape[0]}')
 	st.write(f'Number of columns: {df.shape[1]}')
 
