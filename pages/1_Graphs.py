@@ -17,6 +17,8 @@ st.dataframe(df)
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+# ---------------------------------------------------------------------------------------------------------------------------
+
 # Distribution of legit transactions & fraudulent transactions
 splot = sns.countplot(x = 'Class', data = df)
 
@@ -29,6 +31,8 @@ for p in splot.patches:
 plt.title('Distribution of Legit transactions & Fraudulent transactions')
 plt.xticks(range(2) , labels=['Legit', 'Fraud'])
 st.pyplot(plt)
+
+#--------------------------------------------------------------------------------------------------------------------------------
 
 # Distribution of legit transactions & fraudulent transactions after removing duplicates
 splot = sns.countplot(x = 'Class', data = df)
@@ -43,6 +47,8 @@ plt.title('Distribution of Legit / Fraudulent transactions - \n After removing d
 plt.xticks(range(2) , labels=['Legit', 'Fraud'])
 st.pyplot(plt)
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # % distribution legit transactions & fraudulent transactions
 class_col = df['Class'].value_counts()
 label = ['Legit', 'Fraud']
@@ -50,6 +56,8 @@ quantity = class_col.values
 
 px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
 st.pyplot()
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Transactions in time
 class_0 = df.loc[df['Class'] == 0]["Time"]
@@ -63,6 +71,10 @@ fig['layout'].update(title='Credit Card Transactions Time Density Plot', xaxis=d
 iplot(fig, filename='dist_only')
 st.pyplot(fig)
 st.write("Fraudulent transactions have a distribution more even than valid transactions - are equaly distributed in time, including the low real transaction times, during night in Europe timezone.")
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
