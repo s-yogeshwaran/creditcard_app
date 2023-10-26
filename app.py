@@ -68,51 +68,54 @@ if st.checkbox('show dataset'):
 	st.write(f'Number of columns: {df.shape[1]}')
 	# show_data()
 
-#st.sidebar.title("Credit Card Fraud Detection App")
-#st.sidebar.write('## Machine Learning Algorithms')
-st.sidebar.header('Menu')
-if st.sidebar.button('Machine Learning Algorithm'):
+st.sidebar.header('☰ Menu')
+st.sidebar.checkbox('Meachine Learning Algorithm')
+
+# #st.sidebar.title("Credit Card Fraud Detection App")
+# #st.sidebar.write('## Machine Learning Algorithms')
+# st.sidebar.header('Menu')
+# if st.sidebar.button('Machine Learning Algorithm'):
 	
-	algo = st.radio(
-		'Machine Learning Algorithms', 
-		['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], 
-		index = None,
-	)
+# 	algo = st.radio(
+# 		'Machine Learning Algorithms', 
+# 		['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], 
+# 		index = None,
+# 	)
 	
-	if algo == 'Supervised Learning Algorithms':
-		classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
+# 	if algo == 'Supervised Learning Algorithms':
+# 		classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 		
-		if st.button('Predict'):
-			if classifier == 'Support Vector Machine':
-				y_pred = prediction(svc)
-				score = svc.score(x_train, y_train)
-				#st.write(f"{' '*19}Support Vector Machine\n")
-				#st.write(classification_report(y_test, y_pred))
+# 		if st.button('Predict'):
+# 			if classifier == 'Support Vector Machine':
+# 				y_pred = prediction(svc)
+# 				score = svc.score(x_train, y_train)
+# 				#st.write(f"{' '*19}Support Vector Machine\n")
+# 				#st.write(classification_report(y_test, y_pred))
 			        
 		
-			elif classifier == 'Logistic Regression':
-				predict = prediction(log)
-				score = log.score(x_train, y_train)
-				#print(f"{' '*18}Logistic Regression Report\n")
-				#print(classification_report(y_test, predict))
+# 			elif classifier == 'Logistic Regression':
+# 				predict = prediction(log)
+# 				score = log.score(x_train, y_train)
+# 				#print(f"{' '*18}Logistic Regression Report\n")
+# 				#print(classification_report(y_test, predict))
 			
-			elif classifier == 'Random Forest Classifier':
-				predict = prediction(rf)
-				score = rf.score(x_train, y_train)
-				#print(f"{' '*16}Random Forest Classifier Report\n")
-				#print(classification_report(y_test, predict))
+# 			elif classifier == 'Random Forest Classifier':
+# 				predict = prediction(rf)
+# 				score = rf.score(x_train, y_train)
+# 				#print(f"{' '*16}Random Forest Classifier Report\n")
+# 				#print(classification_report(y_test, predict))
 		
-			else:
-				predict = prediction(dt)
-				score = dt.score(x_train, y_train)
-				#print(f"{' '*19}Decision Tree Classifier\n")
-				#print(classification_report(y_test, predict))
+# 			else:
+# 				predict = prediction(dt)
+# 				score = dt.score(x_train, y_train)
+# 				#print(f"{' '*19}Decision Tree Classifier\n")
+# 				#print(classification_report(y_test, predict))
 		
-			st.write(f"accuracy score of {classifier} = {score:.4f}")
+# 			st.write(f"accuracy score of {classifier} = {score:.4f}")
 
-if st.sidebar.button('Deep Learning'):
-	classifier = st.sidebar.radio('Deep Learning', ['Model 1', 'Model 2', 'Model 3'])
-  	#classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'))
-	#classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
+# if st.sidebar.button('Deep Learning'):
+# 	classifier = st.sidebar.radio('Deep Learning', ['Model 1', 'Model 2', 'Model 3'])
+#   	#classifier = st.sidebar.selectbox("Classifier", ('Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'))
+# 	#classifier = st.sidebar.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 
 		
