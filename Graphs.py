@@ -1,4 +1,18 @@
+import seaborn as sns
+import streamlit as st
+import plotly.express as px
+import plotly.graph_objs as go
+import matplotlib.pyplot as plt
+from plotly.offline import iplot
+import plotly.figure_factory as ff
 
+from app import load_data
+
+st.set_page_config(page_title="Graphs", page_icon="📈")
+st.sidebar.header("📈 Graphs")
+
+df = load_data()
+st.dataframe(df)
 
 
 
