@@ -48,14 +48,12 @@ class_col = df['Class'].value_counts()
 label = ['Legit', 'Fraud']
 quantity = class_col.values
 
-figure = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
+px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
 st.pyplot()
 
 # Transactions in time
-data_df = new_df1
-
-class_0 = data_df.loc[df['Class'] == 0]["Time"]
-class_1 = data_df.loc[df['Class'] == 1]["Time"]
+class_0 = df.loc[df['Class'] == 0]["Time"]
+class_1 = df.loc[df['Class'] == 1]["Time"]
 
 hist_data = [class_0, class_1]
 group_labels = ['Legit', 'Fraud']
