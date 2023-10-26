@@ -14,6 +14,18 @@ st.sidebar.header("📈 Graphs")
 df = load_data()
 st.dataframe(df)
 
+splot = sns.countplot(x = 'Class', data = raw_df)
+
+for p in splot.patches:
+  splot.annotate(format(p.get_height(), '.0f'),
+   (p.get_x() + p.get_width() / 2., p.get_height()),
+    ha = 'center', va = 'center', xytext = (0, 5),
+    textcoords = 'offset points')
+
+plt.title('Distribution of Legit transactions & Fraudulent transactions')
+plt.xticks(range(2) , labels=['Legit', 'Fraud'])
+st.pyplot()
+
 
 
 
