@@ -20,6 +20,7 @@ warnings.filterwarnings('ignore')
 @st.cache_data
 def load_data():
 	df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
+	df.drop('Unnamed: 0', axis = 1, inplace = True)
 	return df
 
 df = load_data()
