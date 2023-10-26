@@ -1,5 +1,6 @@
 import seaborn as sns
 import streamlit as st
+st.set_page_config(page_title="Graphs", page_icon="📈")
 import plotly.express as px
 import plotly.graph_objs as go
 import matplotlib.pyplot as plt
@@ -8,7 +9,7 @@ import plotly.figure_factory as ff
 
 from Home import load_data
 
-st.set_page_config(page_title="Graphs", page_icon="📈")
+# st.set_page_config(page_title="Graphs", page_icon="📈")
 st.sidebar.header("📈 Graphs")
 
 df = load_data()
