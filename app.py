@@ -17,6 +17,11 @@ from sklearn.metrics import precision_score,recall_score,f1_score, classificatio
 import warnings
 warnings.filterwarnings('ignore')
 
+st.set_page_config(
+    page_title="Home",
+    page_icon="🏠",
+)
+
 @st.cache_data
 def load_data():
 	df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
@@ -69,9 +74,9 @@ if st.checkbox('show dataset'):
 	# show_data()
 
 st.sidebar.header('☰ Menu')
-st.sidebar.checkbox('Graphs')
-st.sidebar.checkbox('Supervised Learning Algorithms')
-st.sidebar.cheeckbox('Deep Learning')
+# st.sidebar.checkbox('Graphs')
+# st.sidebar.checkbox('Supervised Learning Algorithms')
+# st.sidebar.cheeckbox('Deep Learning')
 
 
 # #st.sidebar.title("Credit Card Fraud Detection App")
