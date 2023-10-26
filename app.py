@@ -48,9 +48,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app
 # #creating new dataframe
 # new_df = pd.concat([legit_sample,fraud],ignore_index=True)
 
-st.dataframe(df)
-st.write(f'Number of Rows: {df.shape[0]}')
-st.write(f'Number of columns: {df.shape[1]}')
 
 #feature variable and target variable
 x = df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
@@ -82,6 +79,12 @@ def prediction(model):
 	return predict
 
 st.title("Credit Card Fraud Detection App")
+
+if st.button('show dataset'):
+	st.dataframe(df)
+	st.write(f'Number of Rows: {df.shape[0]}')
+	st.write(f'Number of columns: {df.shape[1]}')
+
 #st.sidebar.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
 st.sidebar.write('Menu')
@@ -102,7 +105,7 @@ if st.sidebar.button('Machine Learning Algorithm'):
 	if algo == 'Supervised Learning Algorithms':
 		classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
 		
-		if st.sidebar.button('Predict'):
+		if st.button('Predict'):
 			if classifier == 'Support Vector Machine':
 				y_pred = prediction(svc)
 				score = svc.score(x_train, y_train)
