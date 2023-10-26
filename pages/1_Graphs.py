@@ -13,7 +13,7 @@ from Home import load_data
 # st.set_page_config(page_title="Graphs", page_icon="📈")
 st.sidebar.header("📈 Graphs")
 
-df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv)
+df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
 st.dataframe(df)
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
