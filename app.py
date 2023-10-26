@@ -26,11 +26,6 @@ df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_ap
 df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
 	
 df = pd.concat([df1,df2],ignore_index=True)
-
-df = vaex.from_pandas(df)
-st.dataframe(df)
-st.write(f'Number of Rows: {df.shape[0]}')
-st.write(f'Number of columns: {df.shape[1]}')
 	
 #Feature Scaling - Normalize
 sc = StandardScaler()
@@ -51,7 +46,11 @@ legit_sample=legit.sample(n=473)
 	
 #creating new dataframe
 new_df = pd.concat([legit_sample,fraud],ignore_index=True)
-	
+
+new_df = vaex.from_pandas(new_df)
+st.dataframe(new_df)
+st.write(f'Number of Rows: {new_df.shape[0]}')
+st.write(f'Number of columns: {new_df.shape[1]}')
 
 #feature variable and target variable
 x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
