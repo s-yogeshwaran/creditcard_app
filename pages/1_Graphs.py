@@ -15,7 +15,7 @@ st.sidebar.header("📈 Graphs")
 df = load_data()
 st.dataframe(df)
 
-splot = sns.countplot(x = 'Class', data = raw_df)
+splot = sns.countplot(x = 'Class', data = df)
 
 for p in splot.patches:
   splot.annotate(format(p.get_height(), '.0f'),
