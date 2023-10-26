@@ -47,7 +47,9 @@ def load_data():
 		
 	#creating new dataframe
 	new_df = pd.concat([legit_sample,fraud],ignore_index=True)
-	
+	return new_df
+
+new_df = load_data()
 
 #feature variable and target variable
 x = new_df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
