@@ -50,14 +50,14 @@ def prediction(model):
 
 st.title("Credit Card Fraud Detection App")
 
-if st.button('show dataset'):
-	st.write(df)
+if st.checkbox('show dataset'):
+	st.dataframe(df)
 	st.write(f'Number of Rows: {df.shape[0]}')
 	st.write(f'Number of columns: {df.shape[1]}')
 
 #st.sidebar.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
-st.sidebar.write('Menu')
+st.sidebar.subtitle('Menu')
 if st.sidebar.button('Machine Learning Algorithm'):
 	
 	algo = st.radio(
