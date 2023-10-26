@@ -76,7 +76,7 @@ if st.checkbox('show dataset'):
 st.sidebar.header('☰ Menu')
 # st.sidebar.checkbox('Graphs')
 # st.sidebar.checkbox('Supervised Learning Algorithms')
-# st.sidebar.cheeckbox('Deep Learning')
+# st.sidebar.checkbox('Deep Learning')
 
 
 # #st.sidebar.title("Credit Card Fraud Detection App")
