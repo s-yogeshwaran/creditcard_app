@@ -17,8 +17,19 @@ from sklearn.metrics import precision_score,recall_score,f1_score, classificatio
 import warnings
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
+@st.cache_data
+def load_data():
+	df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
+	return df
 
+df = load_data()
+
+@st.cache_data
+def show_data():
+	st.dataframe(df)
+	st.write(f'Number of Rows: {df.shape[0]}')
+	st.write(f'Number of columns: {df.shape[1]}')
+	
 #feature variable and target variable
 x = df.drop('Class',axis=1)  # axis=1 meansfull column will be dropped and axis = 0 will drop a row
 y = df['Class']
@@ -43,7 +54,7 @@ rf.fit(x_train,y_train)
 svc = SVC(kernel = 'linear')
 svc.fit(x_train, y_train)
 
-@st.cache()
+@st.cache_data()
 def prediction(model):
 	predict = model.predict(x_test)
 	return predict
@@ -51,9 +62,7 @@ def prediction(model):
 st.title("Credit Card Fraud Detection App")
 
 if st.checkbox('show dataset'):
-	st.dataframe(df)
-	st.write(f'Number of Rows: {df.shape[0]}')
-	st.write(f'Number of columns: {df.shape[1]}')
+	show_data()
 
 #st.sidebar.title("Credit Card Fraud Detection App")
 #st.sidebar.write('## Machine Learning Algorithms')
