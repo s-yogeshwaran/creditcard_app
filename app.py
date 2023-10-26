@@ -95,12 +95,6 @@ if st.sidebar.button('Machine Learning Algorithm'):
 		['Supervised Learning Algorithms', 'Unsupervised Learning Algorithms'], 
 		index = None,
 	)
-
-	# genre = st.radio(
- #    	"What's your favorite movie genre",
- #    	[":rainbow[Comedy]", "***Drama***", "Documentary :movie_camera:"],
- #    	index=None,
-	# )
 	
 	if algo == 'Supervised Learning Algorithms':
 		classifier = st.radio('Supervised Learning Algorithms', ['Support Vector Machine', 'Logistic Regression', 'Random Forest Classifier', 'Decision Tree Classifier'])
