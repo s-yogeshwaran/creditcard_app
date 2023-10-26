@@ -2,7 +2,6 @@
 #dataset2 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv
 
 #importing the libraries
-import vaex
 import numpy as np
 import pandas as pd
 import seaborn as sns
