@@ -6,13 +6,14 @@ import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 from plotly.offline import iplot
 import plotly.figure_factory as ff
+import pandas as pd
 
 from Home import load_data
 
 # st.set_page_config(page_title="Graphs", page_icon="📈")
 st.sidebar.header("📈 Graphs")
 
-df = load_data()
+df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv)
 st.dataframe(df)
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
