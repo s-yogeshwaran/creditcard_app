@@ -15,6 +15,9 @@ st.sidebar.header("📈 Graphs")
 df = load_data()
 st.dataframe(df)
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
+# Distribution of legit transactions & fraudulent transactions
 splot = sns.countplot(x = 'Class', data = df)
 
 for p in splot.patches:
@@ -25,7 +28,43 @@ for p in splot.patches:
 
 plt.title('Distribution of Legit transactions & Fraudulent transactions')
 plt.xticks(range(2) , labels=['Legit', 'Fraud'])
-st.pyplot()
+st.pyplot(plt)
+
+# Distribution of legit transactions & fraudulent transactions after removing duplicates
+splot = sns.countplot(x = 'Class', data = new_df1)
+
+for p in splot.patches:
+  splot.annotate(format(p.get_height(), '.0f'),
+   (p.get_x() + p.get_width() / 2., p.get_height()),
+    ha = 'center', va = 'center', xytext = (0, 5),
+    textcoords = 'offset points')
+
+plt.title('Distribution of Legit / Fraudulent transactions - \n After removing duplicates')
+plt.xticks(range(2) , labels=['Legit', 'Fraud'])
+st.pyplot(plt)
+
+# % distribution legit transactions & fraudulent transactions
+class_col = new_df1['Class'].value_counts()
+label = ['Legit', 'Fraud']
+quantity = class_col.values
+
+figure = px.pie(new_df1, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
+st.pyplot(figure)
+
+# Transactions in time
+data_df = new_df1
+
+class_0 = data_df.loc[data_df['Class'] == 0]["Time"]
+class_1 = data_df.loc[data_df['Class'] == 1]["Time"]
+
+hist_data = [class_0, class_1]
+group_labels = ['Legit', 'Fraud']
+
+fig = ff.create_distplot(hist_data, group_labels, show_hist=False, show_rug=False)
+fig['layout'].update(title='Credit Card Transactions Time Density Plot', xaxis=dict(title='Time [s]'))
+iplot(fig, filename='dist_only')
+st.pyplot(fig)
+st.write("Fraudulent transactions have a distribution more even than valid transactions - are equaly distributed in time, including the low real transaction times, during night in Europe timezone.")
 
 
 
