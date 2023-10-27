@@ -47,21 +47,21 @@ st.pyplot(plt)
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
-st.write(f"Number of duplicates = {df.duplicated().sum()}")
-df = df.drop_duplicates()
+# st.write(f"Number of duplicates = {df.duplicated().sum()}")
+# df = df.drop_duplicates()
 
-# 2. Distribution of legit transactions & fraudulent transactions after removing duplicates
-splot = sns.countplot(x = 'Class', data = df)
+# # 2. Distribution of legit transactions & fraudulent transactions after removing duplicates
+# splot = sns.countplot(x = 'Class', data = df)
 
-for p in splot.patches:
-  splot.annotate(format(p.get_height(), '.0f'),
-   (p.get_x() + p.get_width() / 2., p.get_height()),
-    ha = 'center', va = 'center', xytext = (0, 5),
-    textcoords = 'offset points')
+# for p in splot.patches:
+#   splot.annotate(format(p.get_height(), '.0f'),
+#    (p.get_x() + p.get_width() / 2., p.get_height()),
+#     ha = 'center', va = 'center', xytext = (0, 5),
+#     textcoords = 'offset points')
 
-plt.title('Distribution of Legit / Fraudulent transactions - \n After removing duplicates')
-plt.xticks(range(2) , labels=['Legit', 'Fraud'])
-st.pyplot(plt)
+# plt.title('Distribution of Legit / Fraudulent transactions - \n After removing duplicates')
+# plt.xticks(range(2) , labels=['Legit', 'Fraud'])
+# st.pyplot(plt)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ class_col = df['Class'].value_counts()
 label = ['Legit', 'Fraud']
 quantity = class_col.values
 
-fig = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
+fig = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions") # - After removing duplicates")
 st.plotly_chart(fig)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,7 +106,7 @@ st.plotly_chart(fig)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(18,6))
+fig, (ax1, ax2) = plt.subplots(ncols=2)
 
 s = sns.lineplot(ax = ax1, x="Hour", y="Transactions", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Transactions", data=df.loc[df.Class==1], color="red")
@@ -116,18 +116,25 @@ st.plotly_chart(fig)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(18,6))
+fig, (ax1, ax2) = plt.subplots(ncols=2)
 
 s = sns.lineplot(ax = ax1, x="Hour", y="Mean", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Mean", data=df.loc[df.Class==1], color="red")
 
-plt.suptitle("Average Amount of Transactions", fontsize = 18)
+plt.title("Average Amount of Transactions", fontsize = 18)
 st.plotly_chart(fig)
 
 #-----------------------------------------------------------------------------------------------------------------------------------
 
+fig, (ax1, ax2) = plt.subplots(ncols=2)
 
+s = sns.lineplot(ax = ax1, x="Hour", y="Max", data=df.loc[df.Class==0])
+s = sns.lineplot(ax = ax2, x="Hour", y="Max", data=df.loc[df.Class==1], color="red")
 
+plt.suptitle("Maximum Amount of Transactions", fontsize = 18)
+st.plotly_chart(fig)
+
+#----------------------------------------------------------------------------------------------------------------------------------------
 
 
 
