@@ -101,7 +101,7 @@ fig, (ax1, ax2) = plt.subplots(ncols=2)
 s = sns.lineplot(ax = ax1, x="Hour", y="Sum", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Sum", data=df.loc[df.Class==1], color="red")
 
-fig = plt.suptitle("Total Amount", fontsize = 18)
+fig = s.suptitle("Total Amount", fontsize = 18)
 st.plotly_chart(fig)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------
