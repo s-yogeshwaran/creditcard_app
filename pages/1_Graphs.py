@@ -130,7 +130,7 @@ st.plotly_chart(fig)
 
 #-----------------------------------------------------------------------------------------------------------------------------------
 
-fig, (ax1, ax2) = plt.subplots(ncols=2,figsize=(10,6))
+fig, (ax1, ax2) = plt.subplots(ncols=2,figsize=(8,6))
 
 s = sns.lineplot(ax = ax1, x="Hour", y="Max", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Max", data=df.loc[df.Class==1], color="red")
