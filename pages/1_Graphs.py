@@ -35,10 +35,10 @@ st.pyplot(plt)
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
-
+df1 = df.drop_duplicates()
 
 # 2. Distribution of legit transactions & fraudulent transactions after removing duplicates
-splot = sns.countplot(x = 'Class', data = df)
+splot = sns.countplot(x = 'Class', data = df1)
 
 for p in splot.patches:
   splot.annotate(format(p.get_height(), '.0f'),
@@ -52,8 +52,8 @@ st.pyplot(plt)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# % distribution legit transactions & fraudulent transactions
-class_col = df['Class'].value_counts()
+# 3. % distribution legit transactions & fraudulent transactions
+class_col = df1['Class'].value_counts()
 label = ['Legit', 'Fraud']
 quantity = class_col.values
 
@@ -71,8 +71,8 @@ group_labels = ['Legit', 'Fraud']
 
 fig = ff.create_distplot(hist_data, group_labels, show_hist=False, show_rug=False)
 fig['layout'].update(title='Credit Card Transactions Time Density Plot', xaxis=dict(title='Time [s]'))
-iplot(fig, filename='dist_only')
 st.pyplot(fig)
+# iplot(fig, filename='dist_only')
 st.write("Fraudulent transactions have a distribution more even than valid transactions - are equaly distributed in time, including the low real transaction times, during night in Europe timezone.")
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
