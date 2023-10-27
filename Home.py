@@ -98,16 +98,16 @@ col_dict = { "V5" : V5,
 
 values = [V5, V9, V10, V11, V13, V15, V18, V21, V23, V24, V28]
 
-df_col = pd.DataFrame.from_dict([col_dict])
-user_inputs = df_col
+# df_col = pd.DataFrame.from_dict([col_dict])
+# user_inputs = df_col
 
 # Decfne predictions
 prediction = model.predict([values])
 st.write(prediction)
 
-st.markdown("<h5 style = 'text-align: center; color: Black;'> Your Transaction Information </h5>", unsafe_allow_html=True)
+# st.markdown("<h5 style = 'text-align: center; color: Black;'> Your Transaction Information </h5>", unsafe_allow_html=True)
 
-st.table(user_inputs)
+# st.table(user_inputs)
 
 
 
