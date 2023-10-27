@@ -102,7 +102,7 @@ s = sns.lineplot(ax = ax1, x="Hour", y="Sum", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Sum", data=df.loc[df.Class==1], color="red")
 
 # st.header("Total Amount")
-st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center; color: black;'>Total Amount</h5>", unsafe_allow_html=True)
 
 st.plotly_chart(fig)
 
