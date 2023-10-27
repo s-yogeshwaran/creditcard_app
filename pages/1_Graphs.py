@@ -81,9 +81,9 @@ st.write("Fraudulent transactions have a distribution more even than valid trans
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-data_df['Hour'] = data_df['Time'].apply(lambda x: np.floor(x / 3600))
+df['Hour'] = df['Time'].apply(lambda x: np.floor(x / 3600))
 
-tmp = data_df.groupby(['Hour', 'Class'])['Amount'].aggregate(['min', 'max', 'count', 'sum', 'mean', 'median', 'var']).reset_index()
+tmp = df.groupby(['Hour', 'Class'])['Amount'].aggregate(['min', 'max', 'count', 'sum', 'mean', 'median', 'var']).reset_index()
 df = pd.DataFrame(tmp)
 df.columns = ['Hour', 'Class', 'Min', 'Max', 'Transactions', 'Sum', 'Mean', 'Median', 'Var']
 
