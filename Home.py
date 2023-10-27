@@ -45,7 +45,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 # </div>"""
 # st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
-st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
+st.markdown("<h4>[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.<\h4>")
 
 
 
