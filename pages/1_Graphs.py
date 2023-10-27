@@ -1,4 +1,4 @@
-import seaborn as sns
+rimport seaborn as sns
 import streamlit as st
 st.set_page_config(page_title="Graphs", page_icon="📈")
 import plotly.express as px
@@ -101,7 +101,7 @@ fig, (ax1, ax2) = plt.subplots(ncols=2)
 s = sns.lineplot(ax = ax1, x="Hour", y="Sum", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Sum", data=df.loc[df.Class==1], color="red")
 
-st.markdown("Total Amount")
+st.subtitle("Total Amount")
 st.plotly_chart(fig)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------
