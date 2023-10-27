@@ -113,7 +113,8 @@ fig, (ax1, ax2) = plt.subplots(ncols=2)
 s = sns.lineplot(ax = ax1, x="Hour", y="Transactions", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Transactions", data=df.loc[df.Class==1], color="red")
 
-plt.title("Total Number of Transactions", fontsize = 18)
+# plt.title("Total Number of Transactions", fontsize = 18)
+st.markdown("<h5 style='text-align: center; color: black;'>Total Number of Transactions</h5>", unsafe_allow_html=True)
 st.plotly_chart(fig)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -123,7 +124,8 @@ fig, (ax1, ax2) = plt.subplots(ncols=2)
 s = sns.lineplot(ax = ax1, x="Hour", y="Mean", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Mean", data=df.loc[df.Class==1], color="red")
 
-plt.title("Average Amount of Transactions", fontsize = 18)
+# plt.title("Average Amount of Transactions", fontsize = 18)
+st.markdown("<h5 style='text-align: center; color: black;'>Average Amount of Transactions</h5>", unsafe_allow_html=True)
 st.plotly_chart(fig)
 
 #-----------------------------------------------------------------------------------------------------------------------------------
@@ -133,7 +135,8 @@ fig, (ax1, ax2) = plt.subplots(ncols=2)
 s = sns.lineplot(ax = ax1, x="Hour", y="Max", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Max", data=df.loc[df.Class==1], color="red")
 
-plt.title("Maximum Amount of Transactions", fontsize = 18)
+# plt.title("Maximum Amount of Transactions", fontsize = 18)
+st.markdown("<h5 style='text-align: center; color: black;'>Maximum Amount of Transactions</h5>", unsafe_allow_html=True)
 st.plotly_chart(fig)
 
 #----------------------------------------------------------------------------------------------------------------------------------------
