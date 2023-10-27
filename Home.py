@@ -48,7 +48,7 @@ st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
 
 st.markdown("<div style='text-align: center; padding-top: 40px; color: black;'><h5>Select Your Model</h5></div>", unsafe_allow_html=True)
-selection = st.selectbox("", ["Logistic Regression", "Decision Tree Classification", "Support Vector Classification", "Random Forest Classification"])
+selection = st.selectbox("", ["Logistic Regression", "Decision Tree Classification", "Random Forest Classification"]) #"Support Vector Classification",
 
 st.write(selection , "model is selected.")
 
@@ -58,8 +58,8 @@ if selection == "Logistic Regression":
 elif selection == "Decision Tree Classification":
   model = pickle.load(open ('dt.pkl', 'rb'))
 
-elif selection == "Support Vector Classification":
-  model = pickle.load(open ('svc.pkl', 'rb'))
+# elif selection == "Support Vector Classification":
+#   model = pickle.load(open ('svc.pkl', 'rb'))
 
 elif selection == "Random Forest Classification":
   model = pickle.load(open ('rf.pkl', 'rb'))
