@@ -48,10 +48,24 @@ st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
 
 st.markdown("<div style='text-align: center; padding-top: 40px; color: black;'><h5>Select Your Model</h5></div>", unsafe_allow_html=True)
-selection = st.selectbox("", ["Logistic Regression", "Decision Tree Classification", "Support Vector Classification ", "Random Forest Classification"])
+selection = st.selectbox("", ["Logistic Regression", "Decision Tree Classification", "Support Vector Classification", "Random Forest Classification"])
 
 st.write(selection , "model is selected.")
-model = pickle.load(open ('LR_deploy_model.pkl', 'rb'))
+
+if selection == "Logistic Regression":
+  model = pickle.load(open ('log.pkl', 'rb'))
+  
+elif selection == "Decision Tree Classification":
+  model = pickle.load(open ('dt.pkl', 'rb'))
+
+elif selection == "Support Vector Classification":
+  model = pickle.load(open ('svc.pkl', 'rb'))
+
+elif selection == "Random Forest Classification":
+  model = pickle.load(open ('rf.pkl', 'rb'))
+
+else:
+  st.write('Select a model')
 
 
 
@@ -82,16 +96,17 @@ col_dict = { "V5" : V5,
              "V28" : V28
              }
 
+values = [V5, V9, V10, V11, V13, V15, V18, V21, V23, V24, V28]
 
 df_col = pd.DataFrame.from_dict([col_dict])
 user_inputs = df_col
 
 # Decfne predictions
-prediction = model.predict(user_inputs)
+prediction = model.predict(values)
 st.write(prediction)
 
-st.markdown("<h5 style = 'text-align: center; color: Black;'> Your Transaction Information </h5>", unsafe_allow_html=True
-                            )
+st.markdown("<h5 style = 'text-align: center; color: Black;'> Your Transaction Information </h5>", unsafe_allow_html=True)
+
 st.table(user_inputs)
 
 
