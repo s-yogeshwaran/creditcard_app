@@ -141,10 +141,37 @@ st.plotly_chart(fig)
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 
+fig, (ax1, ax2) = plt.subplots(ncols=2)
 
+s = sns.lineplot(ax = ax1, x="Hour", y="Median", data=df.loc[df.Class==0])
+s = sns.lineplot(ax = ax2, x="Hour", y="Median", data=df.loc[df.Class==1], color="red")
 
+# plt.suptitle("Median Amount of Transactions", fontsize = 18)
+st.markdown("<h5 style='text-align: center; color: black;'>Median Amount of Transactions</h5>", unsafe_allow_html=True)
+plt.show()
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
 
+fig, (ax1, ax2) = plt.subplots(ncols=2)
+
+s = sns.lineplot(ax = ax1, x="Hour", y="Min", data=df.loc[df.Class==0])
+s = sns.lineplot(ax = ax2, x="Hour", y="Min", data=df.loc[df.Class==1], color="red")
+
+# plt.suptitle("Minimum Amount of Transactions", fontsize = 18)
+st.markdown("<h5 style='text-align: center; color: black;'>Minimum Amount of Transactions</h5>", unsafe_allow_html=True)
+plt.show()
+
+#------------------------------------------------------------------------------------------------------------------------------------
+
+#Transactions amount
+fig, (ax1, ax2) = plt.subplots(ncols=2)
+
+s = sns.boxplot(ax = ax1, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=True)
+s = sns.boxplot(ax = ax2, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=False)
+st.markdown("<h5 style='text-align: center; color: black;'>Transactions amount</h5>", unsafe_allow_html=True)
+plt.show()
+
+#----------------------------------------------------------------------------------------------------------------------
 
 
 
