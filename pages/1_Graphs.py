@@ -35,6 +35,7 @@ st.pyplot(plt)
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
+st.write(f"Number of duplicates = {df.duplicated().sum()}")
 df1 = df.drop_duplicates()
 
 # 2. Distribution of legit transactions & fraudulent transactions after removing duplicates
