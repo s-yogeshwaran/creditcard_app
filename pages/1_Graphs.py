@@ -83,7 +83,7 @@ hist_data = [class_0, class_1]
 group_labels = ['Legit', 'Fraud']
 
 fig = ff.create_distplot(hist_data, group_labels, show_hist=False, show_rug=False)
-fig['layout'].update(title='Credit Card Transactions Time Density Plot', xaxis=dict(title='Time [s]'))
+fig['layout'].update(title='Credit Card Transactions Time Density Plot', align = 'center', xaxis=dict(title='Time [s]'))
 st.plotly_chart(fig)
 # iplot(fig, filename='dist_only')
 st.write("Fraudulent transactions have a distribution more even than valid transactions - are equaly distributed in time, including the low real transaction times, during night in Europe timezone.")
