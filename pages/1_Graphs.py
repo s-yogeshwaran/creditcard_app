@@ -118,7 +118,7 @@ st.plotly_chart(fig)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-fig, (ax1, ax2) = plt.subplots(ncols=2, title = 'Average Amount of Transactions')
+fig, (ax1, ax2) = plt.subplots(ncols=2)
 
 s = sns.lineplot(ax = ax1, x="Hour", y="Mean", data=df.loc[df.Class==0])
 s = sns.lineplot(ax = ax2, x="Hour", y="Mean", data=df.loc[df.Class==1], color="red")
