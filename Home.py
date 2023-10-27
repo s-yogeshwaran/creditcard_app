@@ -4,14 +4,14 @@ import pandas as pd
 
 
 # set web page
-st.set_page_config(page_title="WONUJIRO Credit Fraud Prediction",
-                   page_icon="📇",
+st.set_page_config(page_title="DV Credit Card Fraud Detection",
+                   page_icon="🕵🏼‍♀️💳",
                    initial_sidebar_state="expanded",
                    layout= "wide")
 
 html_temp = """
 <div style=" text-align:center;">
-<h4 style=" font-size: 20px;">WONUJIRO PROJECT 3</h4>
+<h4 style=" font-size: 20px;">SRM Internship Project</h4>
 </div>
 """
 st.sidebar.markdown(html_temp, unsafe_allow_html=True)
@@ -28,7 +28,7 @@ html_temp = """
   text-align: center;
   font-family: Helvetica
 ">
-Credit Fraud Prediction
+Credit Card Fraud Detection
 </div>"""
 st.markdown(html_temp, unsafe_allow_html=True)
 
