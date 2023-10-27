@@ -5,23 +5,23 @@ import pandas as pd
 
 # set web page
 st.set_page_config(page_title="DV Credit Card Fraud Detection",
-                   page_icon="🕵🏼‍♀️💳",
+                   page_icon="🕵🏼‍♀️", #💳
                    initial_sidebar_state="expanded",
                    layout= "wide")
 
-html_temp = """
-<div style=" text-align:center;">
-<h4 style=" font-size: 20px;">SRM Internship Project</h4>
-</div>
-"""
-st.sidebar.markdown(html_temp, unsafe_allow_html=True)
+# html_temp = """
+# <div style=" text-align:center;">
+# <h4 style=" font-size: 20px;">SRM Internship Project</h4>
+# </div>
+# """
+# st.sidebar.markdown(html_temp, unsafe_allow_html=True)
 
 
 # title of the body
 html_temp = """
 <div style="-moz-box-shadow: 1px 1px 3px 2px red;
-  -webkit-box-shadow: 1px 1px 3px 2px green;
-  box-shadow: 1px 1px 3px 2px green;
+  -webkit-box-shadow: 1px 1px 3px 2px red;
+  box-shadow: 1px 1px 3px 2px red;
   padding: 10px;
   font-size: 30px;
   font-weight: bold;
