@@ -3,6 +3,10 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import streamlit as st
+st.set_page_config(
+    page_title="Home",
+    page_icon="🏠",
+)
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -17,10 +21,7 @@ from sklearn.metrics import precision_score,recall_score,f1_score, classificatio
 import warnings
 warnings.filterwarnings('ignore')
 
-st.set_page_config(
-    page_title="Home",
-    page_icon="🏠",
-)
+
 
 @st.cache_data
 def load_data():
