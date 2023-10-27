@@ -48,7 +48,7 @@ st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
 
 st.markdown("<div style='text-align: center; padding-top: 40px; color: black;'><h5>Select Your Model</h5></div>", unsafe_allow_html=True)
-selection = st.selectbox("", ["Logistic Regression"])
+selection = st.selectbox("", ["Logistic Regression", "Decision Tree Classification", "Support Vector Classification ", "Random Forest Classification"])
 
 st.write(selection , "model is selected.")
 model = pickle.load(open ('LR_deploy_model.pkl', 'rb'))
