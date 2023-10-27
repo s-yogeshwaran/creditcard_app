@@ -22,7 +22,7 @@ st.set_page_config(
     page_icon="🏠",
 )
 
-# @st.cache_data
+@st.cache_data
 def load_data():
 	df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
 	df.drop('Unnamed: 0', axis = 1, inplace = True)
