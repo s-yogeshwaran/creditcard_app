@@ -87,7 +87,7 @@ fig['layout'].update(title='Credit Card Transactions Time Density Plot', xaxis=d
 st.plotly_chart(fig)
 # iplot(fig, filename='dist_only')
 st.write("Fraudulent transactions have a distribution more even than valid transactions - are equaly distributed in time, including the low real transaction times, during night in Europe timezone.")
-
+st.write('\n')
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 df['Hour'] = df['Time'].apply(lambda x: np.floor(x / 3600))
