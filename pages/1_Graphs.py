@@ -57,7 +57,7 @@ st.pyplot(plt)
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 3. % distribution legit transactions & fraudulent transactions
-class_col = df1['Class'].value_counts()
+class_col = df['Class'].value_counts()
 label = ['Legit', 'Fraud']
 quantity = class_col.values
 
