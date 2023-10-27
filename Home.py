@@ -48,8 +48,18 @@ st.header('Credit Card Fraud Detection')
 # </div>"""
 # st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
+df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
+df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+	
+df = pd.concat([df1,df2],ignore_index=True)
+
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
+if st.checkbox('show dataset'):
+  st.dataframe(df)
+  
+if st.checkbox('Show related plots'):
+  st.image('distribution 1.png', caption = "Distribution of Legit transcations & Fraudulent transcation")
 
 
 
