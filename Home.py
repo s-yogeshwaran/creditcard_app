@@ -102,7 +102,7 @@ df_col = pd.DataFrame.from_dict([col_dict])
 user_inputs = df_col
 
 # Decfne predictions
-prediction = model.predict(values)
+prediction = model.predict([values])
 st.write(prediction)
 
 st.markdown("<h5 style = 'text-align: center; color: Black;'> Your Transaction Information </h5>", unsafe_allow_html=True)
