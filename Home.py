@@ -20,7 +20,7 @@ st.sidebar.markdown(html_temp, unsafe_allow_html=True)
 # title of the body
 html_temp = """
 <div style="-moz-box-shadow: 1px 1px 3px 2px red;
-  -webkit-box-shadow: 1px 1px 3px 2px red;
+  -webkit-box-shadow: 1px 1px 3px 2px green;
   box-shadow: 1px 1px 3px 2px red;
   padding: 10px;
   font-size: 30px;
@@ -28,6 +28,7 @@ html_temp = """
   text-align: center;
   font-family: Helvetica
 ">
+SRM Internship Project
 Credit Card Fraud Detection
 </div>"""
 st.markdown(html_temp, unsafe_allow_html=True)
