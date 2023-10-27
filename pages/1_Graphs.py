@@ -1,4 +1,4 @@
-rimport seaborn as sns
+import seaborn as sns
 import streamlit as st
 st.set_page_config(page_title="Graphs", page_icon="📈")
 import plotly.express as px
