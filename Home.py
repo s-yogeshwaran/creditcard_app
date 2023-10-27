@@ -54,6 +54,7 @@ st.write(selection , "model is selected.")
 model = pickle.load(open ('LR_deploy_model.pkl', 'rb'))
 
 
+
 # Collect user input
 V5 = st.sidebar.slider(label="V5", min_value= -3.40, max_value= 3.40, step= 0.01)
 V9 = st.sidebar.slider(label="V9", min_value= -2.30, max_value= 2.30, step= 0.01)
@@ -87,6 +88,7 @@ user_inputs = df_col
 
 # Decfne predictions
 prediction = model.predict(user_inputs)
+st.write(prediction)
 
 st.markdown("<h5 style = 'text-align: center; color: Black;'> Your Transaction Information </h5>", unsafe_allow_html=True
                             )
