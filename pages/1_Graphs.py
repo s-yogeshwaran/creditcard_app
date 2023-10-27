@@ -11,10 +11,18 @@ import numpy as np
 
 # from Home import load_data
 
+# #dataset1 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv
+# #dataset2 link - https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv
+
+df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
+df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
+		
+df = pd.concat([df1,df2],ignore_index=True)
+
 # st.set_page_config(page_title="Graphs", page_icon="📈")
 # st.sidebar.header("📈 Graphs")
 
-df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
+# df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
 # df = load_data()
 st.dataframe(df)
 st.write(f'Number of Rows: {df.shape[0]}')
