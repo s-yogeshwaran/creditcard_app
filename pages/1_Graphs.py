@@ -39,10 +39,10 @@ st.pyplot(plt)
 #--------------------------------------------------------------------------------------------------------------------------------
 
 st.write(f"Number of duplicates = {df.duplicated().sum()}")
-df1 = df.drop_duplicates()
+df = df.drop_duplicates()
 
 # 2. Distribution of legit transactions & fraudulent transactions after removing duplicates
-splot = sns.countplot(x = 'Class', data = df1)
+splot = sns.countplot(x = 'Class', data = df)
 
 for p in splot.patches:
   splot.annotate(format(p.get_height(), '.0f'),
@@ -81,10 +81,41 @@ st.write("Fraudulent transactions have a distribution more even than valid trans
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+data_df['Hour'] = data_df['Time'].apply(lambda x: np.floor(x / 3600))
 
+tmp = data_df.groupby(['Hour', 'Class'])['Amount'].aggregate(['min', 'max', 'count', 'sum', 'mean', 'median', 'var']).reset_index()
+df = pd.DataFrame(tmp)
+df.columns = ['Hour', 'Class', 'Min', 'Max', 'Transactions', 'Sum', 'Mean', 'Median', 'Var']
 
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(18,6))
 
+s = sns.lineplot(ax = ax1, x="Hour", y="Sum", data=df.loc[df.Class==0])
+s = sns.lineplot(ax = ax2, x="Hour", y="Sum", data=df.loc[df.Class==1], color="red")
 
+plt.suptitle("Total Amount", fontsize = 18)
+st.plotly_chart(fig)
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(18,6))
+
+s = sns.lineplot(ax = ax1, x="Hour", y="Transactions", data=df.loc[df.Class==0])
+s = sns.lineplot(ax = ax2, x="Hour", y="Transactions", data=df.loc[df.Class==1], color="red")
+
+plt.suptitle("Total Number of Transactions", fontsize = 18)
+st.plotly_chart(fig)
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(18,6))
+
+s = sns.lineplot(ax = ax1, x="Hour", y="Mean", data=df.loc[df.Class==0])
+s = sns.lineplot(ax = ax2, x="Hour", y="Mean", data=df.loc[df.Class==1], color="red")
+
+plt.suptitle("Average Amount of Transactions", fontsize = 18)
+st.plotly_chart(fig)
+
+#-----------------------------------------------------------------------------------------------------------------------------------
 
 
 
