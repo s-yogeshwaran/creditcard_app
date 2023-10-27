@@ -17,21 +17,24 @@ st.set_page_config(page_title="DV Credit Card Fraud Detection",
 # st.sidebar.markdown(html_temp, unsafe_allow_html=True)
 
 
-# title of the body
-html_temp = """
-<div style="-moz-box-shadow: 1px 1px 3px 2px red;
-  -webkit-box-shadow: 1px 1px 3px 2px red;
-  box-shadow: 1px 1px 3px 2px red;
-  padding: 10px;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  font-family: Helvetica
-">
-SRM Internship Project <br>
-Credit Card Fraud Detection
-</div>"""
-st.markdown(html_temp, unsafe_allow_html=True)
+# # title of the body
+# html_temp = """
+# <div style="-moz-box-shadow: 1px 1px 3px 2px red;
+#   -webkit-box-shadow: 1px 1px 3px 2px red;
+#   box-shadow: 1px 1px 3px 2px red;
+#   padding: 10px;
+#   font-size: 30px;
+#   font-weight: bold;
+#   text-align: center;
+#   font-family: Helvetica
+# ">
+# SRM Internship Project <br>
+# Credit Card Fraud Detection
+# </div>"""
+# st.markdown(html_temp, unsafe_allow_html=True)
+
+st.header('SRM Internship Project')
+st.header('Credit Card Fraud Detection')
 
 
 # # title of the sidebar
@@ -45,7 +48,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 # </div>"""
 # st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
-st.markdown("<h4> [Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook. </h4>")
+st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 
 
