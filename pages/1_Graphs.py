@@ -13,8 +13,8 @@ from Home import load_data
 # st.set_page_config(page_title="Graphs", page_icon="📈")
 st.sidebar.header("📈 Graphs")
 
-# df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
-df = load_data()
+df = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcardst.csv')
+# df = load_data()
 st.dataframe(df)
 st.write(f'Number of Rows: {df.shape[0]}')
 st.write(f'Number of columns: {df.shape[1]}')
