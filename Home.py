@@ -34,17 +34,18 @@ Credit Card Fraud Detection
 st.markdown(html_temp, unsafe_allow_html=True)
 
 
-# title of the sidebar
-html_temp = """
-<div style="background-color:red">
-<p style="color:white;
-            text-align:center;
-            font-size: 17px;
-            ">
-Select Your Data </p>
-</div>"""
-st.sidebar.markdown(html_temp,unsafe_allow_html=True)
+# # title of the sidebar
+# html_temp = """
+# <div style="background-color:red">
+# <p style="color:white;
+#             text-align:center;
+#             font-size: 17px;
+#             ">
+# Select Your Data </p>
+# </div>"""
+# st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
+st.write("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 
 
