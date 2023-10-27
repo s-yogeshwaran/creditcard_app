@@ -166,8 +166,8 @@ plt.show()
 #Transactions amount
 fig, (ax1, ax2) = plt.subplots(ncols=2)
 
-s = sns.boxplot(ax = ax1, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=True)
-s = sns.boxplot(ax = ax2, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=False)
+s = sns.boxplot(ax = ax1, x="Class", y="Amount", hue="Class",data=df, palette="PRGn",showfliers=True)
+s = sns.boxplot(ax = ax2, x="Class", y="Amount", hue="Class",data=df, palette="PRGn",showfliers=False)
 st.markdown("<h5 style='text-align: center; color: black;'>Transactions amount</h5>", unsafe_allow_html=True)
 plt.show()
 
