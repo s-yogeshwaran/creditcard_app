@@ -19,9 +19,9 @@ st.sidebar.markdown(html_temp, unsafe_allow_html=True)
 
 # title of the body
 html_temp = """
-<div style="-moz-box-shadow: 1px 1px 3px 2px #08c7b4;
-  -webkit-box-shadow: 1px 1px 3px 2px #08c7b4;
-  box-shadow: 1px 1px 3px 2px #08c7b4;
+<div style="-moz-box-shadow: 1px 1px 3px 2px red;
+  -webkit-box-shadow: 1px 1px 3px 2px red;
+  box-shadow: 1px 1px 3px 2px red;
   padding: 10px;
   font-size: 30px;
   font-weight: bold;
@@ -35,7 +35,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 # title of the sidebar
 html_temp = """
-<div style="background-color:#08c7b4"">
+<div style="background-color:red">
 <p style="color:white;
             text-align:center;
             font-size: 17px;
