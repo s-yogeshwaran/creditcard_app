@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from plotly.offline import iplot
 import plotly.figure_factory as ff
 import pandas as pd
+import numpy as np
 
 from Home import load_data
 
