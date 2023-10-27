@@ -20,7 +20,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # ---------------------------------------------------------------------------------------------------------------------------
 
-# Distribution of legit transactions & fraudulent transactions
+# 1. Distribution of legit transactions & fraudulent transactions
 splot = sns.countplot(x = 'Class', data = df)
 
 for p in splot.patches:
@@ -35,7 +35,9 @@ st.pyplot(plt)
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
-# Distribution of legit transactions & fraudulent transactions after removing duplicates
+
+
+# 2. Distribution of legit transactions & fraudulent transactions after removing duplicates
 splot = sns.countplot(x = 'Class', data = df)
 
 for p in splot.patches:
@@ -55,8 +57,8 @@ class_col = df['Class'].value_counts()
 label = ['Legit', 'Fraud']
 quantity = class_col.values
 
-px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
-st.pyplot()
+fig = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions - After removing duplicates")
+st.plotly_chart(fig)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 
