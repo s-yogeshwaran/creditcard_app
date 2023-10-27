@@ -71,7 +71,6 @@ label = ['Legit', 'Fraud']
 quantity = class_col.values
 
 fig = px.pie(df, values = quantity, names = label, hole = 0.5, title = "% Distribution of Legit / Fraudulent transactions") # - After removing duplicates")
-plt.title("% Distribution of Legit / Fraudulent transactions")
 st.plotly_chart(fig)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -85,7 +84,6 @@ group_labels = ['Legit', 'Fraud']
 
 fig = ff.create_distplot(hist_data, group_labels, show_hist=False, show_rug=False)
 fig['layout'].update(title='Credit Card Transactions Time Density Plot', xaxis=dict(title='Time [s]'))
-plt.title("Credit Card Transactions Time Density Plot")
 st.plotly_chart(fig)
 # iplot(fig, filename='dist_only')
 st.write("Fraudulent transactions have a distribution more even than valid transactions - are equaly distributed in time, including the low real transaction times, during night in Europe timezone.")
