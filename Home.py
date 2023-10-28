@@ -33,7 +33,8 @@ st.set_page_config(page_title="DV Credit Card Fraud Detection",
 # </div>"""
 # st.markdown(html_temp, unsafe_allow_html=True)
 
-st.title('SRM Internship Project')
+st.title("<h1 style='text-align: center;'>SRM Internship Project</h1>")
+st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True
 st.header('Credit Card Fraud Detection')
 
 
