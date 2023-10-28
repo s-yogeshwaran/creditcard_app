@@ -82,7 +82,7 @@ df = pd.concat([df1,df2],ignore_index=True)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-st.sidebar.markdown("<b> <p style='font-size: 30px;'> ☰ Menu </p> <b>", unsafe_allow_html=True)
+st.sidebar.markdown("<b> <p style='font-size: 26px;'> ☰ Menu </p> <b>", unsafe_allow_html=True)
 
 st.sidebar.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
