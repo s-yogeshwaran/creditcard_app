@@ -53,6 +53,8 @@ df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_ap
 	
 df = pd.concat([df1,df2],ignore_index=True)
 
+link = '[GitHub](http://github.com)'
+st.button(link, unsafe_allow_html=True)
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 if st.checkbox('show dataset'):
