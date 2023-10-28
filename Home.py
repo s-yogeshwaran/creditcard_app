@@ -56,7 +56,7 @@ df = pd.concat([df1,df2],ignore_index=True)
 url = "https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing"
 
 st.markdown(
-    f'<a href="{erl}"style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Click here</a> to see the colab notebook.', unsafe_allow_html=True)
+    f'<a href="{url}"style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Click here</a> to see the colab notebook.', unsafe_allow_html=True)
 
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
