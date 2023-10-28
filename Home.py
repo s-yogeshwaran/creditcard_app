@@ -33,9 +33,13 @@ st.set_page_config(page_title="DV Credit Card Fraud Detection",
 # </div>"""
 # st.markdown(html_temp, unsafe_allow_html=True)
 
+#-------------------------------------------------------------------------------------------------------------------------------------------
+
 st.markdown("<h1 style='text-align: center;'>SRM Internship Project</h1>", unsafe_allow_html=True)
+
 st.markdown("<h2 style='text-align: center;'>Credit Card Fraud Detection</h2>", unsafe_allow_html=True)
 
+#---------------------------------------------------------------------------------------------------------------------------------------------
 
 # # title of the sidebar
 # html_temp = """
@@ -48,16 +52,21 @@ st.markdown("<h2 style='text-align: center;'>Credit Card Fraud Detection</h2>", 
 # </div>"""
 # st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 
+#-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 df1 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard1.csv')
 df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_app/main/creditcard2.csv')
 	
 df = pd.concat([df1,df2],ignore_index=True)
 
-url = "https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing"
-st.markdown(
-    f'<a href="{url}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
-    unsafe_allow_html=True
-)
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# url = "https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing"
+# st.markdown(
+#     f'<a href="{url}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
+#     unsafe_allow_html=True
+# )
+
 # html_temp = f"""
 # <a href="{url}"style="display: inline-block; 
 # padding: 12px 20px; 
@@ -71,7 +80,9 @@ st.markdown(
 # """
 # st.markdown(html_temp, unsafe_allow_html=True)
 
-st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+st.sidebar.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 st.sidebar.markdown("<b><h3> ☰ Menu <h3><b>", unsafe_allow_html=True)
 if st.sidebar.checkbox('show dataset'):
