@@ -34,7 +34,7 @@ st.set_page_config(page_title="DV Credit Card Fraud Detection",
 # st.markdown(html_temp, unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center;'>SRM Internship Project</h1>", unsafe_allow_html=True)
-st.header('Credit Card Fraud Detection')
+st.markdown("<h2 style='text-align: center;'>Credit Card Fraud Detection</h2>", unsafe_allow_html=True)
 
 
 # # title of the sidebar
