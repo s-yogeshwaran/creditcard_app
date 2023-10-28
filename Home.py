@@ -56,9 +56,9 @@ df = pd.concat([df1,df2],ignore_index=True)
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 if st.checkbox('show dataset'):
-  	st.dataframe(df)
-	st.write(f"Number of rows = {df.shape[0]}")
-	st.write(f"Number of columns = {df.shape[1]}")
+  st.dataframe(df)
+  st.write(f"Number of rows = {df.shape[0]}")
+  st.write(f"Number of columns = {df.shape[1]}")
   
 if st.checkbox('Show related plots'):
   st.image('distribution 1.png')#, caption = "Distribution of Legit transcations & Fraudulent transcation")
