@@ -56,9 +56,20 @@ df = pd.concat([df1,df2],ignore_index=True)
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 if st.checkbox('show dataset'):
-  st.dataframe(df)
+  	st.dataframe(df)
   
 if st.checkbox('Show related plots'):
-  st.image('distribution 1.png')#, caption = "Distribution of Legit transcations & Fraudulent transcation")
-  st.image('time density.png')
+  	st.image('distribution 1.png')#, caption = "Distribution of Legit transcations & Fraudulent transcation")
+  	st.image('distribution 2.png')
+	st.image('% distribution.png')
+	st.image('time density.png')
+	st.image('total amount.png')
+	st.image('tot no.of transca.png')
+	st.image('avg amt of transc.png')
+	st.image('max amt of transc.png')
+	st.image('median amt of transc.png')
+	st.image('min amt of transc.png')
+	st.image('transca of amt.png')
+	st.image('amt of fraud transc.png')
+	
 
