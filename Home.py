@@ -56,8 +56,7 @@ df = pd.concat([df1,df2],ignore_index=True)
 url = "https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing"
 
 st.markdown(
-    f'<a href="{erl}" 
-    style="display: inline-block; 
+    f'<a href="{erl}"style="display: inline-block; 
     padding: 12px 20px; 
     background-color: #4CAF50; 
     color: white; 
