@@ -60,5 +60,5 @@ if st.checkbox('show dataset'):
   
 if st.checkbox('Show related plots'):
   st.image('distribution 1.png')#, caption = "Distribution of Legit transcations & Fraudulent transcation")
-	st.image('time density.png')
+  st.image('time density.png')
 
