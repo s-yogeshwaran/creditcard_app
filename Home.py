@@ -57,6 +57,8 @@ st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkf
 
 if st.checkbox('show dataset'):
   	st.dataframe(df)
+	st.write(f"Number of rows = {df.shape[0]}")
+	st.write(f"Number of columns = {df.shape[1]}")
   
 if st.checkbox('Show related plots'):
   st.image('distribution 1.png')#, caption = "Distribution of Legit transcations & Fraudulent transcation")
