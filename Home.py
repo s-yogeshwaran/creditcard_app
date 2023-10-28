@@ -53,27 +53,6 @@ df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_ap
 	
 df = pd.concat([df1,df2],ignore_index=True)
 
-from streamlit.components.v1 import html
-
-# def open_page(url):
-#     open_script= """
-#         <script type="text/javascript">
-#             window.open('%s', '_blank').focus();
-#         </script>
-#     """ % (url)
-#     html(open_script)
-
-# st.button('Click here', on_click=open_page('https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing'))#, args=('https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing'))
-
-from streamlit.components.v1 import html
-def open_page(url):
-    open_script= """
-        <script type="text/javascript">
-            window.open('%s', '_blank').focus();
-        </script>
-    """ % (url)
-    html(open_script)
-st.button('Open link', on_click=open_page('https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing'))
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 if st.checkbox('show dataset'):
