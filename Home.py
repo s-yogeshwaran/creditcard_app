@@ -54,19 +54,22 @@ df2 = pd.read_csv('https://raw.githubusercontent.com/s-yogeshwaran/creditcard_ap
 df = pd.concat([df1,df2],ignore_index=True)
 
 url = "https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing"
-
-html_temp = f"""
-<a href="{url}"style="display: inline-block; 
-padding: 12px 20px; 
-background-color: #4CAF50; 
-color: white; 
-text-align: center; 
-text-decoration: none; 
-font-size: 16px; 
-border-radius: 4px;">Click here</a>
-{'to see the colab notebook.'}
-"""
-st.markdown(html_temp, unsafe_allow_html=True)
+st.markdown(
+    f'<a href="{url}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
+    unsafe_allow_html=True
+)
+# html_temp = f"""
+# <a href="{url}"style="display: inline-block; 
+# padding: 12px 20px; 
+# background-color: #4CAF50; 
+# color: white; 
+# text-align: center; 
+# text-decoration: none; 
+# font-size: 16px; 
+# border-radius: 4px;">Click here</a>
+# {'to see the colab notebook.'}
+# """
+# st.markdown(html_temp, unsafe_allow_html=True)
 
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
