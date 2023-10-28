@@ -73,7 +73,7 @@ st.markdown(
 
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
-st.sidebar.markdown("<b>☰ Menu<b>")
+st.sidebar.markdown("<b> ☰ Menu <b>", unsafe_allow_html=True)
 if st.sidebar.checkbox('show dataset'):
   st.dataframe(df)
   st.write(f"Number of rows = {df.shape[0]}")
