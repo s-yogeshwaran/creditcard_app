@@ -59,8 +59,6 @@ if st.checkbox('show dataset'):
   st.dataframe(df)
   
 if st.checkbox('Show related plots'):
-  st.image('distribution 1.png', caption = "Distribution of Legit transcations & Fraudulent transcation")
-
-
-
+  st.image('distribution 1.png')#, caption = "Distribution of Legit transcations & Fraudulent transcation")
+	st.image('time density.png')
 
