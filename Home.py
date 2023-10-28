@@ -73,7 +73,7 @@ def open_page(url):
         </script>
     """ % (url)
     html(open_script)
-streamlit.button('Open link', on_click=open_page('https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing'))
+st.button('Open link', on_click=open_page('https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing'))
 st.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
 if st.checkbox('show dataset'):
