@@ -86,7 +86,7 @@ st.sidebar.markdown("<b> <p style='font-size: 26px;'> ☰ Menu </p> <b>", unsafe
 
 st.sidebar.markdown("[Click here](https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing) to see the colab notebook.")
 
-if st.sidebar.checkbox('Show colab'):
+if st.sidebar.button('Show colab'):
 	import urllib.request 
 	urllib.request.urlopen('https://colab.research.google.com/drive/1U7xiHFdXa3zkflVrITq8MCBd6FOFbKHA?usp=sharing')  
 
